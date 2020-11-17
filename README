@@ -1,0 +1,12 @@
+This logger has been used and modified by copying from
+one project to another for a long while...  So...
+I suppose it's time to make it a project of it's own
+that can be more easily tracked and included in projects
+properly.
+
+It's nothing special.  It's just a fairly minimalistic
+logging architecture that aspired to be able to log things
+to various different places one day.
+
+
+
