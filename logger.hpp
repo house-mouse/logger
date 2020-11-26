@@ -22,7 +22,9 @@ using namespace moodycamel;
 #define MINIMUM_LOG_LEVEL 0
 #endif // MINIMUM_LOG_LEVEL
 
-#define log_msg(log_level, msg) real_log_msg(__FILE__, __PRETTY_FUNCTION__, __LINE__, log_level, msg)
+#define __FILENAME__ (__builtin_strrchr(__FILE__, '/') ? __builtin_strrchr(__FILE__, '/') + 1 : __FILE__)
+
+#define log_msg(log_level, msg) real_log_msg(__FILENAME__, __PRETTY_FUNCTION__, __LINE__, log_level, msg)
 
 #if MINIMUM_LOG_LEVEL < LOG_TRACE
   #define log_trace(msg) log_messsage(LOG_TRACE, msg)
@@ -65,7 +67,7 @@ using namespace moodycamel;
 #define _I(thing) (LogItem(#thing) << thing)
 
 #define log_messsage(log_level, msg) {\
-    LogMessage __real_s(__FILE__, __PRETTY_FUNCTION__, __LINE__, log_level); \
+    LogMessage __real_s(__FILENAME__, __PRETTY_FUNCTION__, __LINE__, log_level); \
     __real_s << msg; \
     real_log_msg(__real_s); \
 }
