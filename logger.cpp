@@ -251,7 +251,8 @@ return os;
 }
     
 std::ostream &operator <<(std::ostream &os, LogItem &li) {
-    os << li.name << " " << li.data;
+//    os << li.name << " " << li.data;
+    os << li.data;
     
     return os;
 }
