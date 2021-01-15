@@ -13,7 +13,7 @@
 // in order to write them to a file or stdout or ... whatever...
 //
 // Each thread gets it's own lockless queue which it can write to.  The single
-// consumer thread has acces to read (consume) all of the lockless queues
+// consumer thread has access to read (consume) all of the lockless queues
 // and must "sort" from the list of lockless queues.  Sorting is done by
 // timestamp, which is assumed to be "fast".  Hopefully it's just a read from
 // a global variable somewhere and not a system call.
@@ -98,7 +98,7 @@ void real_log_msg(LogMessage &item) {
 
     ThreadLogger *logger(get_thread_logger());
     
-    gettime(item.when);
+    gettime(&item.when);
     
     // TODO: replace this wiht something way better...
     // like memory pools...

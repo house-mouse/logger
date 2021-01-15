@@ -126,7 +126,8 @@ LogMessage &operator<<(LogMessage &, std::string_view &);
 LogMessage &operator<<(LogMessage &, std::string &);
 /*
 LogMessage &operator<<(LogMessage &lm, float m); 
-LogMessage &operator<<(LogMessage &lm, double m);
+LogMessage &operator<<(LogMessage &lm,
+ m);
 LogMessage &operator<<(LogMessage &lm, ssize_t m);
 */
 // The thread-specific log structures...
